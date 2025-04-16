@@ -2,11 +2,11 @@ import { Request, Response, NextFunction } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { HttpError } from '../Utils/HttpError';
 
-// Extensão da interface Request diretamente no arquivo (sem precisar de arquivo de declaração separado)
+// Extensão da interface Request diretamente no arquivo 
 declare global {
   namespace Express {
     interface Request {
-      user?: { id: string };  // Tipagem que você deseja adicionar
+      user?: { id: string };  
     }
   }
 }
@@ -16,7 +16,7 @@ export const autenticarToken = (req: Request, res: Response, next: NextFunction)
   const authHeader = req.headers.authorization;
 
   //se nao existe, lança erro
-  if (!authHeader) throw new HttpError("Token não fornecido", 401);
+  if (!authHeader) throw new HttpError("Token não fornecido, por favor realize login", 401);
 
   //pega somente o token da lista
   const token = authHeader.split(" ")[1];

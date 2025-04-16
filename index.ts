@@ -21,8 +21,8 @@ app.use(express.json())
 
 app.use("/inversor", autenticarToken ,inversorRouter )
 app.use("/conta", authRouter)
-app.use("/painel", painelRouter )
-app.use("/pedido", pedidoRouter)
+app.use("/painel", autenticarToken,painelRouter )
+app.use("/pedido", autenticarToken,pedidoRouter)
 
 app.use(errorHandler)
 

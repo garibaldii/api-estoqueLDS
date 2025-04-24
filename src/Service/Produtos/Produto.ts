@@ -7,7 +7,7 @@ import { HttpError } from "../../Utils/HttpError";
 
 
 //busca o produto com base no código de barras
-const retornaProdutoPeloCodigoDeBarras = async (codigoDeBarras: string) => {
+export const retornaProdutoPeloCodigoDeBarras = async (codigoDeBarras: string) => {
 
     //criando um tipo de mongoose model genérico para todo os produtos
     type ProdutoModel = ReturnModelType<typeof Inversor | typeof Painel>

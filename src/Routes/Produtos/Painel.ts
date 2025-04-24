@@ -7,7 +7,6 @@ painelRouter.get("/", async (req, res, next) => {
     try {
         const paineis = await listaPaineis()
         res.status(200).send({
-            message: "Paineis Cadastrados:",
             paineis
         })
     } catch (error) {

@@ -1,11 +1,9 @@
 import { Pedido, Pedido_MongoDB_Model } from "../Model/Pedido";
 import { HttpError } from "../Utils/HttpError";
 import { removeCodigoBarrasDuplicado } from "../Utils/ProdutoUtils";
-import {  darBaixa, consultaEstoque } from "./Produtos/Produto";
+import { darBaixa, consultaEstoque } from "./Produtos/Produto";
 
-export const listaPedidos = async () => {
-    return await Pedido_MongoDB_Model.find()
-}
+export const listaPedidos = () => Pedido_MongoDB_Model.find()
 
 export const criaPedido = async (value: any) => {
     try {

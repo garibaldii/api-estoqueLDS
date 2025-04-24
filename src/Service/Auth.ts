@@ -11,7 +11,7 @@ export const login = async (email: string, senha: string) => {
 
     if (!usuario) {
         throw new HttpError(
-            `Usuário não encontrado`,
+            `Dados incorretos`,
             404
         )
     }

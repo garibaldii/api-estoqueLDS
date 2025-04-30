@@ -17,14 +17,18 @@ export default abstract class Produto {
     @prop({required: true})
     public tipo: string
 
+    @prop({required: true})
+    public dataEntrada: Date
 
 
 
-    protected constructor(marca: string, modelo: string, codigoDeBarras: string, tipo: string) {
+
+    protected constructor(marca: string, modelo: string, codigoDeBarras: string, tipo: string, dataEntrada: Date) {
         this.marca = marca
         this.codigoDeBarras = codigoDeBarras
         this.modelo = modelo
         this.tipo = tipo
+        this.dataEntrada = dataEntrada
     }
 
   

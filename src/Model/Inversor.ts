@@ -14,7 +14,7 @@ class Inversor extends Produto {
 
 
     constructor(marca: string, modelo: string, codigoDeBarras: string, potencia: number, tensao: number) {
-        super(marca, modelo, codigoDeBarras, "inversor"); //seta o tipo do inversor para servir de direcionamento para manipulação de objetos
+        super(marca, modelo, codigoDeBarras, "inversor", new Date()); //seta o tipo do inversor para servir de direcionamento para manipulação de objetos
         this.potencia = potencia
         this.tensao = tensao
     }

@@ -11,7 +11,7 @@ class Painel extends Produto {
 
 
     constructor(marca: string, modelo: string, codigoDeBarras: string, potencia: number) {
-        super(marca, modelo, codigoDeBarras, "painel");//seta o tipo do inversor para servir de direcionamento para manipulação de objetos
+        super(marca, modelo, codigoDeBarras, "painel", new Date());//seta o tipo do inversor para servir de direcionamento para manipulação de objetos
         this.potencia = potencia
 
     }

@@ -17,7 +17,7 @@ import { produtoRouter } from './src/Routes/Produtos/Produto';
 dotenv.config()
 
 const app = express()
-const port = 8080;
+const port = Number(process.env.PORT) || 8081;
 
 conectaBancoDados()   
 

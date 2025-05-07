@@ -7,8 +7,8 @@ import inversorRouter from './src/Routes/Produtos/Inversor';
 import painelRouter from './src/Routes/Produtos/Painel'
 
 import conectaBancoDados from './src/Database/db';
-import { errorHandler } from './src/Middleware/ErrorHandler';
-import { autenticarToken } from './src/Middleware/Auth';
+import { errorHandler } from './src/middleware/ErrorHandler';
+import { autenticarToken } from './src/middleware/Auth';
 
 import userRouter from './src/Routes/Usuario';
 import authRouter from './src/Routes/Auth';

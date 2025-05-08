@@ -20,19 +20,19 @@ dotenv.config()
 const app = express()
 const port = Number(process.env.PORT) || 8081;
 
-conectaBancoDados()   
+conectaBancoDados()
 
 app.use(express.json())
 app.use(cors())
 
 app.use("/conta", authRouter)
 app.use("/usuario", userRouter)
-app.use("/pedido", autenticarToken,pedidoRouter)
+app.use("/pedido", autenticarToken, pedidoRouter)
 
-app.use("/inversor", autenticarToken ,inversorRouter )
-app.use("/painel", autenticarToken,painelRouter )
+app.use("/inversor", autenticarToken, inversorRouter)
+app.use("/painel", autenticarToken, painelRouter)
 app.use("/produto", autenticarToken, produtoRouter)
-app.use("/download", autenticarToken, downloadRouter)
+app.use("/download", downloadRouter)
 
 app.use(errorHandler)
 

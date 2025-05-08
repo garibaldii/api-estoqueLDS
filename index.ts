@@ -5,6 +5,7 @@ import cors from 'cors'
 import pedidoRouter from './src/Routes/Pedido';
 import inversorRouter from './src/Routes/Produtos/Inversor';
 import painelRouter from './src/Routes/Produtos/Painel'
+import downloadRouter from './src/Routes/Download';
 
 import conectaBancoDados from './src/Database/db';
 import { errorHandler } from './src/middleware/ErrorHandler';
@@ -31,6 +32,7 @@ app.use("/pedido", autenticarToken,pedidoRouter)
 app.use("/inversor", autenticarToken ,inversorRouter )
 app.use("/painel", autenticarToken,painelRouter )
 app.use("/produto", autenticarToken, produtoRouter)
+app.use("/download", autenticarToken, downloadRouter)
 
 app.use(errorHandler)
 

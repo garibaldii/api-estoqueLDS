@@ -59,6 +59,8 @@ export const uploadProductFile = async (fileBuffer: Buffer) => {
     } catch (e: any) {
         errors.push({"Paineis": e.message});
     }
+    
+    if(!panelData.length && !inverterData.length) throw new HttpError("Planilha vazia", 400, {inverterData, panelData})
 
     if (errors.length) throw new HttpError("Código de Barras Duplicado", 409, errors)
 

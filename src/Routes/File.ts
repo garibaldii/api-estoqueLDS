@@ -10,8 +10,8 @@ const fileRouter = Router()
 fileRouter.get("/download", (req, res, next) => {
     //get the excel model
     try {
-        const filePath = path.join(__dirname, "../../public/text.txt")
-        res.download(filePath, "text.txt")
+        const filePath = path.join(__dirname, "../../public/planilha-modelo-lds.xlsx")
+        res.download(filePath, "planilha-modelo-lds.xlsx")
     } catch (error) {
         next(error)
     }

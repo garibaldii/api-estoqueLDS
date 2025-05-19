@@ -2,36 +2,36 @@ import express from 'express';
 import dotenv from 'dotenv'
 import cors from 'cors'
 
-import pedidoRouter from './src/Routes/Pedido';
-import inversorRouter from './src/Routes/Produtos/Inversor';
-import painelRouter from './src/Routes/Produtos/Painel'
-import fileRouter from './src/Routes/File';
+import orderRouter from './src/routes/OrderRouter';
+import inverterRouter from './src/routes/products/InverterRouter';
+import painelRouter from './src/routes/products/PanelRouter'
+import fileRouter from './src/routes/FileRouter';
 
-import conectaBancoDados from './src/Database/db';
+import databaseConnection from './src/database/db';
 import { errorHandler } from './src/middleware/ErrorHandler';
-import { autenticarToken } from './src/middleware/Auth';
+import { authToken } from './src/middleware/Auth';
 
-import userRouter from './src/Routes/Usuario';
-import authRouter from './src/Routes/Auth';
-import { produtoRouter } from './src/Routes/Produtos/Produto';
+import userRouter from './src/routes/UserRouter';
+import authRouter from './src/routes/AuthRouter';
+import { productRouter } from './src/routes/products/ProductRouter';
 
 dotenv.config()
 
 const app = express()
 const port = Number(process.env.PORT) || 8081;
 
-conectaBancoDados()
+databaseConnection()
 
 app.use(express.json())
 app.use(cors())
 
-app.use("/conta", authRouter)
-app.use("/usuario", userRouter)
-app.use("/pedido", autenticarToken, pedidoRouter)
+app.use("/auth", authRouter)
+app.use("/user", userRouter)
+app.use("/order", authToken, orderRouter)
 
-app.use("/inversor", autenticarToken, inversorRouter)
-app.use("/painel", autenticarToken, painelRouter)
-app.use("/produto", autenticarToken, produtoRouter)
+app.use("/inverter", authToken, inverterRouter)
+app.use("/panel", authToken, painelRouter)
+app.use("/product", authToken, productRouter)
 app.use("/file", fileRouter)
 
 app.use(errorHandler)

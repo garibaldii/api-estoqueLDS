@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getUserById } from '../Service/Usuario'
+import { getUserById } from '../service/UserService'
 
 
 const userRouter = Router()

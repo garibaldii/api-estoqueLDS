@@ -1,17 +1,17 @@
 import { Router } from "express";
-import { criaPainelEmLote, listaPaineis } from "../../Service/Produtos/Painel";
+import { postManyPanels, getPanels } from "../../service/products/PanelService";
 
 const painelRouter = Router()
 
 painelRouter.get("/", async (req, res, next) => {
     try {
-        const paineis = await listaPaineis()
+        const panels = await getPanels()
         res.status(200).send({
-            paineis
+            panels
         })
     } catch (error) {
         next(error)
-     }
+    }
 })
 
 
@@ -19,14 +19,14 @@ painelRouter.get("/", async (req, res, next) => {
 //POST MANY
 painelRouter.post("/", async (req, res, next) => {
     try {
-        let dados = req.body
+        let data = req.body
 
-        const paineis = await criaPainelEmLote(dados)
+        const panels = await postManyPanels(data)
 
 
         res.status(201).send({
             message: `Paineis Cadastrados com Sucesso!`,
-            paineis
+            panels
         })
 
 

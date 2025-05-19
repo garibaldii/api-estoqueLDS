@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import path from 'path'
 import multer from 'multer'
-import { uploadProductFile } from '../Service/Excel'
+import { uploadProductFile } from '../service/ExcelService'
 
 
 const fileRouter = Router()

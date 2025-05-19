@@ -1,13 +1,16 @@
 import { Router } from 'express'
-import { usuarioCadastrado } from '../Service/Usuario'
+import { getUserById } from '../Service/Usuario'
 
 
 const userRouter = Router()
 
-userRouter.get("/:email", async (req, res, next) => {
+
+
+userRouter.get("/:id", async (req, res, next) => {
     try {
-        const { email } = req.params
-        const result = await usuarioCadastrado(email)
+        const { id } = req.params
+        const result = await getUserById(id)
+        console.log(id)
         res.status(200).send(result)
     } catch (error) {
         next(error)

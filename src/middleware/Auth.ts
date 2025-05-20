@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import { HttpError } from '../Utils/HttpError';
+import { HttpError } from '../utils/HttpError';
 
 // Extensão da interface Request diretamente no arquivo 
 declare global {
@@ -11,7 +11,7 @@ declare global {
   }
 }
 
-export const autenticarToken = (req: Request, res: Response, next: NextFunction) => {
+export const authToken = (req: Request, res: Response, next: NextFunction) => {
     //pega a lista que contem bearer e jwt do header
   const authHeader = req.headers.authorization;
 

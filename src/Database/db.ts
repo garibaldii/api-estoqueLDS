@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const conectaBancoDados = () => {
+const databaseConnection = () => {
     console.log('Conectando com o banco de dados... ⌛');
 
     const uri = process.env.MONGODB_URI;
@@ -15,4 +15,4 @@ const conectaBancoDados = () => {
         .catch((error) => console.log('Erro ao conectar ao MongoDB:', error));
 };
 
-export default conectaBancoDados;
+export default databaseConnection;

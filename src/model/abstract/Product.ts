@@ -18,7 +18,7 @@ export default abstract class Product {
     public type: string
 
     @prop({ required: true })
-    public incomindDate: Date
+    public incomingDate: Date
 
 
     protected constructor(brand: string, model: string, barsCode: string, type: string, incomingDate: Date) {
@@ -26,7 +26,7 @@ export default abstract class Product {
         this.model = model
         this.barsCode = barsCode
         this.type = type
-        this.incomindDate = incomingDate
+        this.incomingDate = incomingDate
     }
 
 
